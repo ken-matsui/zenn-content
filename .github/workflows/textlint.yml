@@ -1,0 +1,20 @@
+name: Textlint
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: textlint-github-pr-review
+        uses: tsuyoshicho/action-textlint@v3
+        with:
+          github_token: ${{ secrets.github_token }}
+          reporter: github-pr-review
+          level: warning
+          textlint_flags: "articles/**"
