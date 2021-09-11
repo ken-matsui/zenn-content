@@ -20,3 +20,4 @@ rules:
   ja-technical-writing/ja-no-mixed-period:
     allowPeriodMarks: [":"]
   ja-technical-writing/sentence-length: false # 100文字数制限の無効化
+  ja-technical-writing/ja-no-weak-phrase: false
