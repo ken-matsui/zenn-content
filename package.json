@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "new:article": "zenn new:article",
+    "preview": "zenn preview",
+    "lint": "textlint articles/**/*.md",
+    "format": "textlint --fix articles/**/*.md"
   },
   "repository": {
     "type": "git",
