@@ -116,7 +116,7 @@ Source: [Deploy to live & preview channels via GitHub pull requests](https://fir
 
 @[card](https://firebase.google.com/docs/hosting/github-integration)
 
-SPA ではない場合や、そもそもフロントエンドでない場合は、Firebase Hosting を使用できませんが、それに対してもプレビューデプロイを実現できます。そちらに関する詳細は、別記事にて紹介いたします。
+SPA ではない場合や、そもそもフロントエンドでない場合は、Firebase Hosting を使用できません。しかし、Cloud Run を使用すれば、そういった場合でもプレビューデプロイを実現できます。そちらに関する詳細は、[プレビューデプロイをCloud Runで行う](/articles/preview-deploy-on-cloud-run)にて紹介しています。
 
 ## GitHub で Branch protection rule を設定する
 
