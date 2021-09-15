@@ -1,5 +1,5 @@
 ---
-title: "Cloud Runでプレビューデプロイを行う"
+title: "Cloud Runを使ってPR毎にプレビューデプロイを行う"
 emoji: "🚀"
 type: "tech"
 topics: ["gcp", "cloudrun", "github", "githubactions"]
