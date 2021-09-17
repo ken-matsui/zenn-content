@@ -114,7 +114,7 @@ Source: [Deploy to live & preview channels via GitHub pull requests](https://fir
 
 詳細は以下のリンクを参照してください。
 
-@[card](https://firebase.google.com/docs/hosting/github-integration)
+https://firebase.google.com/docs/hosting/github-integration
 
 SPA ではない場合や、そもそもフロントエンドでない場合は、Firebase Hosting を使用できません。しかし、Cloud Run を使用すれば、そういった場合でもプレビューデプロイを実現できます。そちらに関する詳細は、[プレビューデプロイをCloud Runで行う](/articles/preview-deploy-on-cloud-run)にて紹介しています。
 
