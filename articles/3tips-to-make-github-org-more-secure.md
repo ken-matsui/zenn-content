@@ -154,7 +154,7 @@ Auth0 の管理画面から、`Auth Pipeline` -> `Rules` -> `Create` と選択�
 * 承認済みの JavaScript 生成元: `https://${YOUR_AUTH0_DOMAIN}`
 * 承認済みのリダイレクト URI: `https://${YOUR_AUTH0_DOMAIN}/login/callback`
 
-![GCP OAuth クライアント ID 設定](/images/3tips-to-make-github-org-more-secure/gcp-oauth-client-id-setting.png)
+![GCP OAuth クライアント ID 設定](/images/3tips-to-make-github-org-more-secure/gcp-oauth-client-id-settings.png)
 
 最後に、`作成` をクリックすると、クライアント ID とクライアントシークレットが表示されます。これらを、Auth0 側で設定する必要があるため、残しておいてください。
 
