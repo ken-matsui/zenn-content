@@ -2,8 +2,8 @@
 title: "GitHub Organizationをセキュアにするための3つのTips"
 emoji: "🔐"
 type: "idea"
-topics: ["github", "security"]
-published: false
+topics: ["github", "security", "saml", "auth0", "googleworkspace", "gcp"]
+published: true
 ---
 
 :::message
