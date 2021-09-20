@@ -12,13 +12,9 @@ published: true
 * Google Workspace
 :::
 
-会社単位で GitHub Organization を運用する場合は、権限管理等を含めたセキュリティが非常に重要です。Github Free の Organization でも基本的な権限管理であれば揃っていますが、SAML 等の高度セキュリティ設定は含まれていません。
+会社単位で GitHub Organization を運用する場合は、権限管理等を含めたセキュリティが非常に重要です。Github Free の Organization でも基本的な権限管理であれば揃っていますが、SAML 等の高度なセキュリティ設定は含まれていません。
 
 そういった Free で可能なメンバーの権限管理に関しては、別の記事にて紹介します。こちらの記事では、Free や Enterprise にて利用可能で、重要な 3 つのセキュリティ設定に関して紹介します。
-
-:::message alert
-一部のサービスは無料で使用できますが、GitHub Enterprise を含め、趣味や初期のスタートアップ等にしては高額なものも含まれます。所属される会社様に確認をとって、これらを設定することをおすすめします。
-:::
 
 # Two-factor authentication を強制化する `(free)`
 
