@@ -97,7 +97,7 @@ GitHub の Organization ページから、`Organization security` に移動し�
 
 ![GitHubのSAML設定画面](/images/3tips-to-make-github-org-more-secure/github-saml-sso.png)
 
-Auth0 の Identity Provider Certificate は、URL として表示されているため、それを以下のコマンド等を使用して取得・コピーし、それを貼り付けてください。
+Auth0 の Identity Provider Certificate は、URL として表示されているため、それを以下のコマンド等を使用して取得・コピーし、GitHub の Public certificate 欄に貼り付けてください。
 
 ```sh
 $ curl https://dev-s0tkr2z1.us.auth0.com/pem | pbcopy
