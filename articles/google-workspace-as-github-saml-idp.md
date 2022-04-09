@@ -1,6 +1,6 @@
 ---
 title: "Google Workspace を GitHub の SAML IdP として使う"
-emoji: "🦔"
+emoji: "🔐"
 type: "idea"
 topics: ["googleworkspace", "github", "saml", "security"]
 published: true
