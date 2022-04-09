@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/ken-matsui/zenn-content#readme",
   "dependencies": {
-    "zenn-cli": "^0.1.95"
+    "zenn-cli": "^0.1.108"
   },
   "devDependencies": {
     "textlint": "^12.0.2",
