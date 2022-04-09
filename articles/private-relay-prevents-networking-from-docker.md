@@ -24,7 +24,9 @@ https://github.com/docker/for-mac/issues/6030#issuecomment-992590521
 ここで気をつけないといけないのが、設定 > Apple ID > Private Relay のチェックマークを外すだけでは、オフにはならないということです。
 これに気づかず、チェックマークを外したにも関わらず上記問題が直らなかったため、別のことが原因だと思い、半日近く関係の無い解決策を試していました。
 
-キチンとオフにするには、Private Relay 欄の、`Options...` ボタンを押し、右上の `Turn Off Private Relay` ボタンをクリックして初めてオフになります。
+![demo](/images/private-relay-prevents-networking-from-docker/demo.gif)
+
+キチンとオフにするには、Private Relay 欄の、`Options...` ボタンを押し、右上の `Turn Off...` ボタンをクリックして初めてオフになります。
 
 逆に、オンにしたい時は、チェックマークを入れるだけで OK です。
 チェックマークを外す時に、ダイアログが表示されることもあり、それに従う場合は上手くオフになります。
