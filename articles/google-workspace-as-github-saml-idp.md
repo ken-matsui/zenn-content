@@ -27,17 +27,17 @@ https://zenn.dev/ubie/articles/ee2ce9cc471f09#saml-sso%E3%81%A82fa%E3%81%AE%E5%B
 
 # SAML IdP 変更の流れ
 
-GitHub 上から、一旦 SAML をオフにする必要があります。
-いきなり `Public certificate` 等を変更して保存してしまうと、GitHub 側に保存されている、SSO identity が、Auth0 のものと Google Workspace のもので合わないことになります。
-こうなると、最悪の場合、全員が組織から弾かれてしまい、誰も入れなくなってしまう可能性があるためです。
-SAML 認証を必須化していれば、もう誰もログインできないため、サポートデスクのお世話になるかもしれません。
+まず、GitHub 上から、一旦 SAML をオフにする必要があります。
+いきなり `Public certificate` 等を変更して保存してしまうと、GitHub 側に保存されている SSO identity が、Auth0 のものと Google Workspace のもので合わないことになります。
+こうなると最悪の場合、全員が組織から弾かれてしまい、誰も入れなくなってしまう可能性があるためです。
+SAML 認証を必須化していれば、もう誰もログインできないため、サポートデスクに連絡するしかない状態に陥るかもしれません。
 
 :::message
-GitHub 側で移行の手順が明記されていないため、このような対応をしましたが、設定変更時に SSO identity を一度削除する、といった処理がなされている可能性もあります。
+GitHub 側で移行の手順が明記されていないため、このような対応をしましたが、設定変更時に SSO identity を一度削除する、といった処理が GitHub 側でなされている可能性もあります。
 その場合は、シンプルに設定を変更し、`Save` すれば問題無いかと思います。
 :::
 
-以下の手順で、一旦 SAML をオフにすることで、GitHub 上から SSO identity を削除でき、スムーズに移行できます。
+以上を踏まえた上で、こちらの記事では下記の手順で、SAML IdP を変更します。
 
 1. GitHub 上の、SAML single sign-on の設定ページから、`Enable SAML authentication` のチェックマークを一旦外し、設定を `Save` する
 2. Google Workspace で GitHub 用の SAML アプリを設定する
