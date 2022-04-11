@@ -102,7 +102,7 @@ export default withAuthRequired(async function InviteUser(req, res) {
 });
 ```
 
-コードが少し長めにも見えますが、やっていることは非常に簡単です。
+コードが少し長めにも見えますが、やっていることは非常にシンプルです。
 
 1. ```ts
    export default withAuthRequired(async function InviteUser(req, res) {
@@ -116,7 +116,7 @@ export default withAuthRequired(async function InviteUser(req, res) {
    const supabaseAdmin = createClient(supabaseUrl, supabaseServiceRole);
    ```
    `supabase-js` の `createClient` 関数を使用します。いつもであれば、第 2 引数は `anon` キーになりますが、今回は `Auth (Server Only)` 欄の関数を使用したいため、`service_role` キーを使用します。
-4. CORS 設定をしない
+4. CORS の設定をしない
    CORS に関して何も指定しないということは、[同一オリジンのみを許可する設定](https://nextjs.org/docs/api-routes/introduction#caveats)となります。これは、Next.js のフロント側からしか叩くことが無いからです。
 5. ```ts
    const { data, error } = await supabaseAdmin
@@ -129,7 +129,7 @@ export default withAuthRequired(async function InviteUser(req, res) {
 # ブラウザ側から招待 API を叩く
 
 後はブラウザ側から、API を叩くだけです。
-今回では、シンプルな `fetch` を使用しますが、[`SWR`](https://swr.vercel.app/) 等を組み合わせることも可能かと思います。
+今回では、シンプルに `fetch` を使用します。
 
 以下の手順で、`pages/index.tsx` 等に実装していきます。
 
