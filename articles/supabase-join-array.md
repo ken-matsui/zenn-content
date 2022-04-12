@@ -74,7 +74,7 @@ insert into users values
 RLS はややこしくなってしまうため、一旦オフのままにしています。
 本番運用する前には、オンにすることをおすすめします。
 
-`uuid_generate_v4()` というものを使用していますが、こちらは、`uuid-ossp` という Extension を使用しています。
+`uuid_generate_v4()` というものを使用していますが、こちらは、`uuid-ossp` という Extension の関数です。
 デフォルトで有効になっているため、特に設定することなく使用できます。
 
 https://supabase.com/docs/guides/database/extensions/uuid-ossp#uuid_generate_v4
