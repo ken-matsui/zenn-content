@@ -21,7 +21,7 @@ https://github.com/sclevine/yj
 
 * Rust 製
 * Wasm 対応
-* 順序保持
+* キー等の順序保持
 
 # インストール方法
 
