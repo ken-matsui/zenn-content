@@ -1,5 +1,5 @@
 ---
-title: "Supabase で Array の Join"
+title: "Supabase で Join Array"
 emoji: "📚"
 type: "tech"
 topics: ["supabase", "postgresql"]
