@@ -1,5 +1,5 @@
 ---
-title: "GitHub の通知をいい感じに Slack に送信する action を作った話"
+title: "Slack を活用して GitHub でのタスク対応漏れを防ぐ GitHub Actions"
 emoji: "🤖"
 type: "idea"
 topics: ["github", "githubactions", "slack"]
