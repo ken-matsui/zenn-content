@@ -24,9 +24,7 @@ published: true
 $ poetry add -D pysen[lint]
 ```
 
-`pyproject.toml`
-
-```toml
+```toml: pyproject.toml
 [tool.poetry.dev-dependencies]
 pysen = {version = "0.9.1", extras = ["lint"]}
 
@@ -56,9 +54,7 @@ mypy_ignore_packages = ["*.migrations.*"]
 Pysen に `django-configurations` のデフォルト値を設定することで、エラーになることを防ぎます。
 以下のファイルを作成してください。
 
-`pysen_setup/base_mypy_setup.py`
-
-```python
+```python: pysen_setup/base_mypy_setup.py
 # ref: https://github.com/typeddjango/django-stubs/pull/180#issuecomment-820062352
 
 import os
@@ -76,9 +72,7 @@ def plugin(main: Any, version: str) -> Any:
 
 Pysen に作成したファイルを認識させるために、`pyproject.toml` を編集します。
 
-`pyproject.toml`
-
-```diff toml
+```diff toml: pyproject.toml
 +[tool.pysen-cli]
 +settings_dir = "pysen_setup"
 +
@@ -133,9 +127,7 @@ Pysen は `tool.pysen-cli.settings_dir` で指定されたディレクトリ内�
 
 https://github.com/pfnet/pysen/blob/66fb2c1dd6854c149224c53c4c01fbbc8f473a8f/examples/plugin_example/plugin.py
 
-`pysen_setup/plugin.py`
-
-```python
+```python: pysen_setup/plugin.py
 import dataclasses
 import pathlib
 from typing import Any, DefaultDict, Dict, Sequence, Tuple
@@ -225,7 +217,7 @@ def plugin() -> PluginBase:
 
 `django-configurations` と共存させるためと、`mypy.ini` の以下の部分を実現するために、setup スクリプトも実装します。
 
-```ini
+```ini: mypy.ini
 [mypy]
 plugins =
     mypy_django_plugin.main
@@ -235,9 +227,7 @@ plugins =
 
 https://github.com/typeddjango/django-stubs/pull/180#issuecomment-700686370
 
-`pysen_setup/mypy_django_setup.py`
-
-```python
+```python: pysen_setup/mypy_django_setup.py
 from mypy_django_plugin import main
 
 from base_mypy_setup import plugin as base_plugin
@@ -255,9 +245,7 @@ $ poetry add -D django-stubs
 
 また、今回作成したプラグインと、`django-stubs` と `django-configurations` 共存用の setup スクリプトも読み込ませます。
 
-`pyproject.toml`
-
-```diff toml
+```diff toml: pyproject.toml
 [tool.poetry.dev-dependencies]
 pysen = {version = "0.9.1", extras = ["lint"]}
 +django-stubs = "^1.8.0"
@@ -300,7 +288,7 @@ mypy_ignore_packages = ["*.migrations.*"]
 
 https://github.com/typeddjango/django-stubs#installation
 
-```ini
+```ini: mypy.ini
 [mypy]
 plugins =
     mypy_django_plugin.main
@@ -308,21 +296,21 @@ plugins =
 
 =
 
-```toml
+```toml: pyproject.toml
 [[tool.pysen.lint.mypy_plugins]]
   script = "./mypy_django_setup.py"
 ```
 
 ---
 
-```ini
+```ini: mypy.ini
 [mypy.plugins.django-stubs]
 django_settings_module = "myapi.settings"
 ```
 
 =
 
-```toml
+```toml: pyproject.toml
 [tool.pysen.plugin."django-stubs"]
 script = "./pysen_setup/plugin.py"
 
@@ -332,9 +320,7 @@ script = "./pysen_setup/plugin.py"
 
 Pysen のプラグインを作成すると、途中生成のファイルが残ってしまうみたいで、それを `.gitignore` します。
 
-`pysen_setup/.gitignore`
-
-```
+```: pysen_setup/.gitignore
 pyproject.toml
 setup.cfg
 ```
@@ -356,9 +342,7 @@ https://github.com/typeddjango/djangorestframework-stubs#installation
 
 setup スクリプトだけ実装します。
 
-`pysen_setup/mypy_drf_setup.py`
-
-```python
+```python: pysen_setup/mypy_drf_setup.py
 from mypy_drf_plugin import main
 
 from base_mypy_setup import plugin as base_plugin
@@ -376,9 +360,7 @@ $ poetry add -D djangorestframework-stubs
 
 後は、3 でやったように設定を編集します。
 
-`pyproject.toml`
-
-```diff toml
+```diff toml: pyproject.toml
 [tool.poetry.dev-dependencies]
 pysen = {version = "0.9.1", extras = ["lint"]}
 django-stubs = "^1.8.0"
