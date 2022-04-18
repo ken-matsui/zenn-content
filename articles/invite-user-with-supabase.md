@@ -60,7 +60,7 @@ Supabase Client のドキュメントにある、`Auth (Server only)` と書か�
 
 `.env.local` ファイルに、`SUPABASE_SERVICE_ROLE` として、先程コピーした内容をペーストします。
 
-```bash
+```bash: .env.local
 # Update these with your Supabase details from your project settings > API
 NEXT_PUBLIC_SUPABASE_URL="https://your-project.supabase.co"
 NEXT_PUBLIC_SUPABASE_ANON_KEY="your-anon-key"
@@ -72,9 +72,7 @@ SUPABASE_SERVICE_ROLE="your-service-role"  # This key has the ability to bypass 
 `inviteUserByEmail` を使用するため、招待には、email address が必要になります。
 そのため、API Route を以下のように実装するのが綺麗かと思います。
 
-`pages/api/invite/[email].ts`
-
-```ts
+```ts: pages/api/invite/[email].ts
 import { withAuthRequired } from "@supabase/supabase-auth-helpers/nextjs";
 import { createClient } from "@supabase/supabase-js";
 
