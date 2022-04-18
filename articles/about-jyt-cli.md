@@ -132,9 +132,7 @@ TOML の `datetime` 型等の、変換の際に特殊な対応が必要な情報
 
 https://qiita.com/mysticatea/items/f523dab04a25f617c87d#-%E3%83%AB%E3%83%BC%E3%83%AB%E3%81%AE%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E4%BD%BF%E3%81%86
 
-`.eslintrc.json`
-
-```json
+```json: .eslintrc.json
 {
     "extends": "eslint:recommended",
     "env": {"browser": true},
@@ -150,9 +148,7 @@ https://qiita.com/mysticatea/items/f523dab04a25f617c87d#-%E3%83%AB%E3%83%BC%E3%8
 cat .eslintrc.json | jyt jy > .eslintrc.yaml
 ```
 
-`.eslintrc.yaml`
-
-```yaml
+```yaml: .eslintrc.yaml
 ---
 extends: "eslint:recommended"
 env:
