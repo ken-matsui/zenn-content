@@ -24,9 +24,7 @@ https://github.com/rhysd/actionlint
 
 以下をコピペすれば、使用できます。
 
-`.github/workflows/actionlint.yml`
-
-```yaml
+```yaml: .github/workflows/actionlint.yml
 name: Actionlint
 
 on:
@@ -65,9 +63,7 @@ https://github.com/technote-space/assign-author
 
 以下をコピペすれば、使用できます。
 
-`.github/workflows/auto-assign-author.yml`
-
-```yaml
+```yaml: .github/workflows/auto-assign-author.yml
 name: Auto Assign Author
 
 on:
@@ -98,9 +94,7 @@ https://github.com/actions/labeler
 
 以下をコピペすれば、使用できます。
 
-`.github/workflows/labeler.yml`
-
-```yaml
+```yaml: .github/workflows/labeler.yml
 name: "Pull Request Labeler"
 on:
   - pull_request_target
@@ -139,9 +133,7 @@ GitHub で共同開発していると、どうしても連絡やタスクを見�
 
 上記記事内のセットアップと、以下をコピペすれば、使用できます。
 
-`.github/workflows/notify-slack.yml`
-
-```yaml
+```yaml: .github/workflows/notify-slack.yml
 name: GitHub Notification
 
 on:
@@ -163,9 +155,7 @@ jobs:
           slack_oauth_access_token: ${{ secrets.SLACK_OAUTH_ACCESS_TOKEN }}
 ```
 
-`.github/userlist.toml`
-
-```toml
+```toml: .github/userlist.toml
 [[users]]
 github = "ken-matsui"
 slack = "UXXXXXXXXXX"
@@ -188,9 +178,7 @@ https://github.com/secretlint/secretlint
 
 以下をコピペすれば、使用できます。
 
-`.github/workflows/secretlint.yml`
-
-```yaml
+```yaml: .github/workflows/secretlint.yml
 name: Secretlint
 
 on:
@@ -220,9 +208,7 @@ jobs:
         run: yarn secretlint
 ```
 
-`package.json`
-
-```json
+```json: package.json
 {
   ...,
   "scripts": {
