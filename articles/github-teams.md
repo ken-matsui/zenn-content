@@ -163,4 +163,4 @@ Organization のページから、Teams へ移動してください。
 
 https://docs.github.com/en/organizations/organizing-members-into-teams/about-teams
 
-こちらの記事に参考になれば幸いです。
+こちらの記事が参考になれば幸いです。
