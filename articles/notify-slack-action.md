@@ -74,8 +74,7 @@ https://github.com/ken-matsui/notify-slack
 action ファイルはそのままコピーで問題ありません。
 userlist ファイルは、環境に合わせて編集してください。
 
-1. `.github/workflows/notify-slack.yml`
-   ```yaml
+1. ```yaml: .github/workflows/notify-slack.yml
    name: GitHub Notification
 
    on:
@@ -96,8 +95,7 @@ userlist ファイルは、環境に合わせて編集してください。
            with:
              slack_oauth_access_token: ${{ secrets.SLACK_OAUTH_ACCESS_TOKEN }}
     ```
-2. `.github/userlist.toml`
-   ```toml
+2. ```toml: .github/userlist.toml
    [[users]]
    github = "ken-matsui"
    slack = "UXXXXXXXXXX"
