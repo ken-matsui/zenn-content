@@ -6,7 +6,7 @@ topics: ["django", "er図", "githubactions", "github"]
 published: true
 ---
 
-会社でプロダクト開発をしているとよく、ER 図どこにありますか？と聞かれます。
+会社でプロダクト開発をしていると、ER 図が要求されることがあります。
 そういった時に、最新のコミットを元に Django のソースコードから ER 図を CI 上で生成していればそれを渡すだけで済むため、非常に楽です。
 
 度重なる仕様変更で、draw.io 等に作っておいた ER 図は古くなってしまっているでしょうから、ソースコードが最も正しいものになります。
@@ -18,7 +18,7 @@ published: true
 
 `django-extensions` と `pygraphviz` を追加します。
 
-```toml
+```toml: pyproject.toml
 [tool.poetry.dependencies]
 ...
 django-extensions = "^3.1.5"
@@ -32,7 +32,7 @@ erd = ["pygraphviz"]
 
 `settings.py` に `django-extensions` を追加します。
 
-```python
+```python: settings.py
 INSTALLED_APPS = (
     ...
     'django_extensions',
@@ -44,9 +44,7 @@ INSTALLED_APPS = (
 
 以下の GitHub Actions をコピペすると、自動生成できます。
 
-`.github/workflows/erd.yml`
-
-```yaml
+```yaml: .github/workflows/erd.yml
 name: ERD
 
 on:
