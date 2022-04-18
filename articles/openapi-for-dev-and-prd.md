@@ -33,7 +33,7 @@ Cloud Endpoints を使用していると、その編集したドキュメント�
 
 そこで、`dev/openapi.yaml` のみを配置し、npm script として `sed` コマンドを実行することで、本番環境用の `openapi.yaml` を生成できました。
 
-```json
+```json: package.json
 {
   "scripts": {
     "build:prd": "sed 's/example.dev/example.app/g' dev/openapi.yaml > prd/openapi.yaml"
@@ -43,7 +43,7 @@ Cloud Endpoints を使用していると、その編集したドキュメント�
 
 他にも、dev という文言があって、それを prd と置き換えたい場合は以下のように、セミコロンで繋げることができます。
 
-```json
+```json: package.json
 {
   "scripts": {
     "build:prd": "sed 's/example.dev/example.app/g; s/dev/prd/g' dev/openapi.yaml > prd/openapi.yaml"
@@ -65,7 +65,7 @@ https://garafu.blogspot.com/2020/06/multi-file-openapi.html
 分割した場合は、例えば `dev/index.yaml` と置いておき、`swagger-cli` を使用して `dev/openapi.yaml` に結合後の内容を出力します。
 それで開発環境用は完成で、それに対して、`sed` コマンドを実行する先程のコマンドを実行することで、本番環境用も完成します。
 
-```json
+```json: package.json
 {
   "scripts": {
     "build:dev": "npx @apidevtools/swagger-cli bundle -o dev/openapi.yaml -t yaml dev/index.yaml",
