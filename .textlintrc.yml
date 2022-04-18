@@ -9,7 +9,9 @@ rules:
       allowFullWidthQuestion: true
     no-doubled-joshi:
       strict: false
-      allow: ["か"] # 助詞のうち「か」は複数回の出現を許す(e.g.: するかどうか)
+      allow:
+        - "か" # 助詞のうち「か」は複数回の出現を許す(e.g.: するかどうか)
+        - "に" # e.g. 非常に丁寧に
   preset-ja-spacing:
     ja-space-between-half-and-full-width:
       space: "always"
