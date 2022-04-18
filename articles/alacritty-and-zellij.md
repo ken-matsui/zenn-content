@@ -40,9 +40,7 @@ https://zenn.dev/gosarami/articles/4becaa18273216fec5ee
 
 以下のように設定することで、Alacritty を起動する際に、tmux も合わせて自動起動できます。
 
-`.config/alacritty/alacritty.yml`
-
-```yaml
+```yaml: .config/alacritty/alacritty.yml
 shell:
   program: /bin/zsh
   args:
@@ -65,9 +63,7 @@ shell:
 
 Zellij の場合は、以下のように設定することで、Alacritty を起動する際に Zellij も合わせて自動起動できます。
 
-[`.config/alacritty/alacritty.yml`](https://github.com/ken-matsui/dotfiles/blob/5426a08732a79711ccd77e573e6c781ed3a3e207/.config/alacritty/alacritty.yml#L133-L138)
-
-```yaml
+```yaml: .config/alacritty/alacritty.yml
 shell:
   program: /bin/zsh
   args:
@@ -75,6 +71,8 @@ shell:
     - -c
     - "zellij attach --index 0 --create"
 ```
+
+https://github.com/ken-matsui/dotfiles/blob/5426a08732a79711ccd77e573e6c781ed3a3e207/.config/alacritty/alacritty.yml#L133-L138
 
 以下の PR で実装した機能で、上記の tmux の設定と全く同じ挙動をする設定になります。
 
