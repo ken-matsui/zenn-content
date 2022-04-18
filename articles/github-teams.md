@@ -149,6 +149,12 @@ Organization のページから、Teams へ移動してください。
 
 すると、`Example PJ Engineers` Team に追加されたユーザーは、`push` 等ができるようになりました。
 
+:::message
+Team 名を `Example PJ Engineers` と、少し冗長にしているのは、入れ子内に入っていても、全体として一意な Team 名である必要があるためです。
+例えば、`Example PJ` > `Engineers` としていた時、`Test PJ` > `Engineers` は作成できません。
+そのため、少し冗長になっても `Example PJ Engineers` と命名しています。
+:::
+
 # 最後に
 
 以上で、全体的な Teams の使い方が説明できたかと思います。
