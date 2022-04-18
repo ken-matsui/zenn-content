@@ -118,9 +118,7 @@ except binascii.Error:
 
 :::details Django と Rest Framework では Authentication Class が作成できるので、以下のように実装できます。
 
-`myapi/authentication.py`
-
-```python
+```python: myapi/authentication.py
 import binascii
 from typing import Any, Dict, Final, Optional, Tuple
 
@@ -194,9 +192,7 @@ class Authentication(BaseAuthentication):
         return "Access to the authentication required site"
 ```
 
-`settings.py`
-
-```python
+```python: settings.py
 REST_FRAMEWORK: Dict[str, Any] = {
     "DEFAULT_AUTHENTICATION_CLASSES": [
         "myapi.authentication.Authentication",
@@ -209,9 +205,7 @@ REST_FRAMEWORK: Dict[str, Any] = {
 
 すると、以下のように `request.user` としてユーザー情報を使用できるようになります。
 
-`mysite/views.py`
-
-```python
+```python: mysite/views.py
 class UserRetrieveAPIView(RetrieveAPIView):
     def get(self, request: Request, *args: Any, **kwargs: Any) -> Response:
         serializer = self.get_serializer_class()(request.user)
@@ -236,9 +230,7 @@ https://cloud.google.com/endpoints/docs/deprecations/endpoints-portal-deprecatio
 ただ、API ドキュメントを開発チームに展開する時は、Redoc 等でどこかにデプロイされていると見やすいです。
 この記事では、[Private GitHub Pages](https://github.blog/jp/2021-01-25-access-control-for-github-page/) を使用して、Redoc としてデプロイすることをおすすめします。
 
-`.github/workflows/api-docs.yml`
-
-```yaml
+```yaml: .github/workflows/api-docs.yml
 name: 'API Docs'
 
 on:
@@ -274,25 +266,25 @@ API ドキュメントを閲覧するのは、エンジニアしかいないは�
 Cloud Endpoints をデプロイしていくために、まずは、`openapi.yaml` を作成しましょう。
 
 1. まず、3.0 を使用できないため、バージョンを 2.0 に設定します
-   ```yaml
+   ```yaml: openapi.yaml
    swagger: "2.0"
    ```
 2. 次に、`info` 欄には、`version` を[指定できます](https://cloud.google.com/endpoints/docs/openapi/versioning-an-api)。ここでは、`1.0.0-beta` とします
-   ```yaml
+   ```yaml: openapi.yaml
    info:
      version: 1.0.0-beta
    ```
 3. `host` として、Cloud Endpoints が API として振る舞うための URL を指定します
-   ```yaml
+   ```yaml: openapi.yaml
    host: "api.example.dev"
    ```
 4. `basePath` にバージョンを指定すると、API のバージョニングが簡単に行えるため、設定することをおすすめします
    そのままシンプルにスラッシュのみでも問題ありません。
-   ```yaml
+   ```yaml: openapi.yaml
    basePath: /v1beta
    ```
 5. CORS を設定します
-   ```yaml
+   ```yaml: openapi.yaml
    # Ref: https://cloud.google.com/endpoints/docs/openapi/support-cors
    x-google-endpoints:
      - name: "api.wiz-dom.dev"
@@ -303,7 +295,7 @@ Cloud Endpoints をデプロイしていくために、まずは、`openapi.yaml
    `path_translation` に `APPEND_PATH_TO_ADDRESS` を指定することで、そのままパスをバックエンドに渡してくれます。
    基本的には、こちらを使用することが多いと思います。
    `path_translation` の詳細は[こちら](https://cloud.google.com/endpoints/docs/openapi/openapi-extensions#understanding_path_translation)に書かれているので参考にしてください。
-   ```yaml
+   ```yaml: openapi.yaml
    # Ref: https://cloud.google.com/endpoints/docs/openapi/openapi-extensions
    x-google-backend:
      address: "https://api-backend.example.dev"
@@ -311,7 +303,7 @@ Cloud Endpoints をデプロイしていくために、まずは、`openapi.yaml
    ```
 7. 認証を使用する
    Auth0 を使用する場合は、以下のように記述できます。
-   ```yaml
+   ```yaml: openapi.yaml
    securityDefinitions:
      auth0_jwk:
        authorizationUrl: "https://auth.example.dev/authorize"
@@ -326,7 +318,7 @@ Cloud Endpoints をデプロイしていくために、まずは、`openapi.yaml
    ```
 8. （Optional）リクエスト制限をかける
    例えば、Read 系のリクエストを 1 分につき 1000 回に制限し、Write 系のリクエストを 1 分につき 50 回に制限したい時は、以下のように記述できます。
-   ```yaml
+   ```yaml: openapi.yaml
    # Ref: https://cloud.google.com/endpoints/docs/openapi/quotas-configure
    x-google-management:
      metrics:
@@ -355,9 +347,7 @@ Cloud Endpoints をデプロイしていくために、まずは、`openapi.yaml
 これでベースラインは完成なので、後は、パスを追加していきます。
 例えば以下のようになると思います。
 
-`openapi.yaml`
-
-```yaml
+```yaml: openapi.yaml
 paths:
   /users:
     get:
@@ -393,9 +383,7 @@ Cloud Endpoints にデプロイできたと思いますが、継続的にデプ�
 
 ## 1. Cloud Endpoints へ自動でデプロイする
 
-`.github/workflows/cloud-endpoints.yml`
-
-```yaml
+```yaml: .github/workflows/cloud-endpoints.yml
 name: 'Cloud Endpoints'
 
 on:
@@ -462,9 +450,7 @@ jobs:
 サービスの設定を検証するのみで、実際にはデプロイしません。
 PR 上で走らせ、`main` ブランチへの Branch Protection Rule の requirements に追加するのがおすすめです。
 
-`.github/workflows/cloud-endpoints-validator.yml`
-
-```yaml
+```yaml: .github/workflows/cloud-endpoints-validator.yml
 name: 'Cloud Endpoints'
 
 on: pull_request
@@ -494,9 +480,7 @@ jobs:
 
 OpenAPI ファイル自体も一応検証しておくと安心です。
 
-`.github/workflows/swagger.yml`
-
-```yaml
+```yaml: .github/workflows/swagger.yml
 name: 'Swagger'
 
 on:
@@ -518,9 +502,7 @@ jobs:
 
 Textlint で日本語文章を検証しておくと、尚安心です。
 
-`.github/workflows/textlint.yml`
-
-```yaml
+```yaml: .github/workflows/textlint.yml
 name: 'Textlint'
 
 on:
@@ -545,9 +527,7 @@ jobs:
         run: npm run lint
 ```
 
-`package.json`
-
-```json
+```json: package.json
 {
     "scripts": {
       "lint": "textlint './openapi.md'"
@@ -561,9 +541,7 @@ jobs:
 }
 ```
 
-`.textlintrc.yml`
-
-```yaml
+```yaml: .textlintrc.yml
 plugins:
   '@textlint/markdown':
     extensions: [".md"]
