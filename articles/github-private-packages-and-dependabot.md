@@ -1,5 +1,5 @@
 ---
-title: "会社の GitHub Private Packages を Dependabot に更新させる"
+title: "GitHub Private Packages を Dependabot に更新させる"
 emoji: "🤖"
 type: "tech"
 topics: ["github", "githubpackages", "npm", "dependabot"]
