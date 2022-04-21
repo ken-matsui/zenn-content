@@ -43,7 +43,7 @@ https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-ac
 ```yaml diff: .github/workflows/chromatic.yml
       - name: Publish to Chromatic
         uses: chromaui/action@v1
-+        id: chromatic
++       id: chromatic
         # Chromatic GitHub Action options
         with:
           # 👇 Chromatic projectToken, refer to the manage page to obtain it.
