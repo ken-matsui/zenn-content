@@ -61,7 +61,7 @@ Production へのデプロイを行う Actions もあったので、ミスして
 
 # モノレポで感じた問題点
 
-## Environment の異常発生
+## Environments の異常発生
 
 Web の Production や、API ドキュメント、管理画面に、etc. と、モノレポにした影響で Environments が大量発生しました。
 
