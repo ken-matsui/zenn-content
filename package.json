@@ -2,7 +2,7 @@
   "private": true,
   "name": "zenn-content",
   "version": "1.0.0",
-  "description": "",
+  "description": "Content for Zenn",
   "main": "index.js",
   "scripts": {
     "new:article": "zenn new:article",
