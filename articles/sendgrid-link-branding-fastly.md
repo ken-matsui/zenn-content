@@ -8,7 +8,7 @@ published: true
 
 Sendgrid では、クリックトラッキングを有効にできます。
 クリックトラッキングは、Sendgrid がメールを送信する前に、そのメール内に含まれる全てのリンクを Sendgrid 経由のリンクに置き換えることで Sendgrid 側でリンクのクリック率などを計測するための機能です。
-その対象のリンクが、HSTS (HTTP Strict Transport Security) を有効にしている場合に、Sendgrid の用意するトラッキングリンクはデフォルトで HTTPS に対応していないために、SSL 証明書エラーとなります。
+Sendgrid の用意するトラッキングリンクはデフォルトで HTTPS に対応していないため、その対象のリンクが HSTS (HTTP Strict Transport Security) を有効にしている場合、SSL 証明書エラーとなります。
 
 この問題に関しては、以下のブログでも言及されています。
 
