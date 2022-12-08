@@ -6,17 +6,15 @@ topics: ["chromatic", "storybook", "github", "githubactions"]
 published: true
 ---
 
-Storybook を使用してコンポーネントを管理されている方は、Chromatic も合わせて使っているんじゃないかと思います。
+Storybook を使用してコンポーネントを管理されている方は、Chromatic も合わせて使っているかと思います。
 
-以下の記事には、GitHub Actions を使用して Chromatic をデプロイする方法に関して記載されており、それで運用されている方が多いかと思います。
+以下の記事では、GitHub Actions を使用して Chromatic をデプロイする方法に関して記載されており、それで運用されている方が多いかと思います。
 
 https://www.chromatic.com/docs/github-actions
 
-しかし、GitHub を中心に活動している自分にとって、レビューのタイミングで毎度 Chromatic へログインして該当のデプロイを探すのは非常に面倒です。
+しかし、レビューのタイミングで毎度 Chromatic へログインして該当のデプロイを探すのは非常に面倒で、該当のデプロイへ直接アクセスできると便利です。
 
-該当のデプロイへ直接アクセスしたいものです。
-
-そういった経緯から、以下のようにプレビューリンクの付いたコメントを生成してほしいと思っていました。
+そこでこの記事では、以下のようなプレビューリンク付きのコメントが、PR 上に自動で投稿されるようにしました。
 
 ![Firebase Hosting のプレビューリンクコメント](/images/git-workflow-in-waterfall-for-starups/hosting-github-action-previewURL-comment.png)
 *Firebase Hosting のプレビューリンクコメント
