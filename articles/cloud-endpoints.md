@@ -8,23 +8,21 @@ published: true
 
 # Cloud Endpoints とは
 
-GCP には、Cloud Endpoints というサービスがあります。
-
 https://cloud.google.com/endpoints
 
-こちらは以下のような使い方ができます。
+Cloud Endpoints は以下のような使い方ができます。
 
 * Cloud Endpoints を認証を担う REST プロキシ
 * その先に、バックエンドサービス
 
 Cloud Endpoints は、Extensible Service Proxy V2（ESPv2）をデプロイすることで動作します。
-今どきのサービスだと、[Apigee](https://cloud.google.com/apigee) や [Envoy](https://www.envoyproxy.io/) を使用されていることが多いと思いますが、その ESPv2 は Envoy ベースで実装されています。
+近年のサービスでは、[Apigee](https://cloud.google.com/apigee) や [Envoy](https://www.envoyproxy.io/) を使用されていることが多いと思いますが、ESPv2 は Envoy ベースで実装されています。
 
 https://cloud.google.com/endpoints/docs/openapi/migrate-to-esp-v2#unsupported_use_cases
 
 # Cloud Endpoints の利点・欠点
 
-私的に Cloud Endpoints を実際に、会社のプロダクト用として運用してみた時に感じた利点は以下の通りです。
+Cloud Endpoints を実際に、会社のプロダクト用として運用してみた時に感じた利点は以下の通りです。
 
 1. OpenAPI ファイルと実際のサービスプロキシを同期させることができる
 2. 認証をバックエンド実装に任せる必要がない
@@ -223,12 +221,12 @@ Cloud Endpoints Portal の利点は、IAM を使ってそのポータルへの�
 
 しかし、Swagger UI や Redoc と比較すると圧倒的に見づらいです。
 
-そういったこともあり、非推奨になるみたいで、2023 年 3 月 21 日をもってデプロイされなくなります。
+そういったこともあり、非推奨になるらしく、2023 年 3 月 21 日をもってデプロイされなくなります。
 
 https://cloud.google.com/endpoints/docs/deprecations/endpoints-portal-deprecation?hl=ja
 
 ただ、API ドキュメントを開発チームに展開する時は、Redoc 等でどこかにデプロイされていると見やすいです。
-この記事では、[Private GitHub Pages](https://github.blog/jp/2021-01-25-access-control-for-github-page/) を使用して、Redoc としてデプロイすることをおすすめします。
+そこで、[Private GitHub Pages](https://github.blog/jp/2021-01-25-access-control-for-github-page/) を使用して、Redoc としてデプロイすることをおすすめします。
 
 ```yaml: .github/workflows/api-docs.yml
 name: 'API Docs'
@@ -258,7 +256,7 @@ jobs:
 
 上記の Action を実行した後は、レポジトリページ > Settings > Pages > Source で `gh-pages` ブランチを選択すれば、GitHub Pages に表示されます。
 
-API ドキュメントを閲覧するのは、エンジニアしかいないはずで、その場合は、GitHub に対してアクセス権があるはずです。
+API ドキュメントを閲覧するのは、エンジニアしかいないと思うので、GitHub に対してアクセス権があるはずです。
 そのアクセス権を使用して、Private GitHub Pages 側で認証し、適切なユーザーのみが API ドキュメントを閲覧できます。
 
 # Cloud Endpoints 用の `openapi.yaml` を作成する
