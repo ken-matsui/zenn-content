@@ -5,7 +5,7 @@ plugins:
 rules:
   preset-ja-technical-writing:
     no-exclamation-question-mark:
-      allowFullWidthExclamation": true
+      allowFullWidthExclamation: true
       allowFullWidthQuestion: true
     no-doubled-joshi:
       strict: false
@@ -13,6 +13,12 @@ rules:
         - "か" # 助詞のうち「か」は複数回の出現を許す(e.g.: するかどうか)
         - "に" # e.g. 非常に丁寧に
         - "が" # e.g. 〜がありましたが、
+    ja-no-mixed-period:
+      allowPeriodMarks: [":"]
+    sentence-length: false # 100文字数制限の無効化
+    ja-no-weak-phrase: false
+    no-mix-dearu-desumasu:
+      preferInList: "ですます"
   preset-ja-spacing:
     ja-space-between-half-and-full-width:
       space: "always"
@@ -20,10 +26,6 @@ rules:
     ja-space-around-code:
       before: true
       after: true
-  ja-technical-writing/ja-no-mixed-period:
-    allowPeriodMarks: [":"]
-  ja-technical-writing/sentence-length: false # 100文字数制限の無効化
-  ja-technical-writing/ja-no-weak-phrase: false
 
 filters:
   comments: true
