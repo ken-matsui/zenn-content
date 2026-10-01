@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/ken-matsui/zenn-content#readme",
   "dependencies": {
-    "zenn-cli": "^0.5.3"
+    "zenn-cli": "^0.5.4"
   },
   "devDependencies": {
     "textlint": "^15.8.0",
